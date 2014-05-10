@@ -55,6 +55,34 @@ module.exports = {
   },
 
   /**
+    * Get all Walls by userId
+    */
+  myWalls: function(req, res) {
+    var userId = req.session.user;
+    var status = false;
+
+    Wall.find({
+      where: {
+        "userId": userId
+      },
+      sort: "id DESC"
+    }).done(function (err, walls) {
+      if (err) {
+        res.send({ "status": status, error: 'Error 400' }, 400);
+      } else {
+        if (!walls) {
+          res.json({ "status": status, error: 'Walls of user ID ' + userId + ' not found' }, 404);
+        }
+        else {
+          status = true;
+          res.send({ "status": status, data: walls });
+        }
+      }
+    });
+  },
+
+
+  /**
     * Get Wall by title identifier
     */
   findOneByTitle: function(req, res) {

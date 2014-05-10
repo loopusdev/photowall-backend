@@ -30,6 +30,7 @@ module.exports.policies = {
     destroy: 'isWallOwner',
     find: true,
     photos: true,
+    myWalls: 'isAuthenticated',
     create: true,
   },
 
