@@ -23,7 +23,21 @@ module.exports.policies = {
     destroy: 'isWallOwner',
     find: true,
     create: true,
-  }
+  },
+
+  WallController: {
+    '*': ['isAuthenticated', 'isAdmin'],
+    destroy: 'isWallOwner',
+    find: true,
+    create: true,
+  },
+
+  UserController: {
+    '*': ['isAuthenticated', 'isAdmin'],
+    login: true,
+    find: true,
+    create: true,
+  },
 
 };
 
