@@ -13,7 +13,9 @@ module.exports = {
   	url: {
       type: "url",
       required: true,
-    }
+    },
+
+    wallId:
 
   }
 
