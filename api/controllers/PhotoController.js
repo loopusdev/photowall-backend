@@ -24,7 +24,34 @@ module.exports = {
    * Overrides for the settings in `config/controllers.js`
    * (specific to PhotoController)
    */
-  _config: {}
+  _config: {},
+
+  upload: function (req, res) {
+    var cloudinary = require('cloudinary');
+
+    cloudinary.config({
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME || 'hnuvannfg',
+      api_key: process.env.CLOUDINARY_API_KEY || '756473867167364',
+      api_secret: process.env.CLOUDINARY_API_SECRET || 'DAzxC17FDupRJ5ZsUW8pdSADvoA'
+    });
+
+
+    var imageData = res.param('imageData');
+
+    var status = false;
+
+    cloudinary.uploader.upload(imageData, function(result) {
+      if (result) {
+        status = true;
+        res.json({ "status": status, data: result });
+      }
+      else {
+        res.json({ "status": status, error: 'Error during image upload' }, 500);
+      }
+    });
+
+
+  },
 
 
 
