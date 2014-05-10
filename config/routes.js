@@ -37,6 +37,7 @@ module.exports.routes = {
   },
 
   'get /wall/title/:title': {
+    cors: true,
     controller: 'WallController',
     action: 'findOneByTitle'
   }
