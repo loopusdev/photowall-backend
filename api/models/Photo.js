@@ -15,7 +15,10 @@ module.exports = {
       required: true,
     },
 
-    wallId:
+    wallId: {
+      type: 'integer',
+      required: true,
+    }
 
   }
 
