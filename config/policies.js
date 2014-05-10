@@ -20,18 +20,21 @@ module.exports.policies = {
 
   PhotoController: {
     '*': ['isAuthenticated', 'isAdmin'],
-    destroy: 'isWallOwner',
+    //destroy: 'isWallOwner', TODO
+    destroy: true,
     find: true,
     create: true,
   },
 
   WallController: {
     '*': ['isAuthenticated', 'isAdmin'],
-    destroy: 'isWallOwner',
+    //destroy: 'isWallOwner', TODO
+    destroy: true,
     find: true,
     photos: true,
     myWalls: 'isAuthenticated',
-    create: true,
+    create: 'isAuthenticated',
+    findOneByTitle: true
   },
 
   UserController: {

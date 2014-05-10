@@ -19,7 +19,9 @@ module.exports = {
     userId: {
       type: 'integer',
       required: true,
-    }
+    },
+
+
 
   }
 
