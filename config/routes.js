@@ -54,6 +54,13 @@ module.exports.routes = {
     action: 'myWalls'
   },
 
+
+  'post /photo/upload': {
+    cors: true,
+    controller: 'PhotoController',
+    action: 'upload'
+  },
+
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?
