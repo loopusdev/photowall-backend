@@ -41,6 +41,7 @@ module.exports = {
           if (match) {
             // password match
             req.session.user = user.id;
+            req.session.authenticated = true;
 
             delete user.password;
 

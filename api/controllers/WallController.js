@@ -16,15 +16,21 @@
  */
 
 module.exports = {
-    
-  
+
+
 
 
   /**
    * Overrides for the settings in `config/controllers.js`
    * (specific to WallController)
    */
-  _config: {}
+  _config: {},
 
-  
+  photo: function(req, res) {
+
+  }
+
+
+
+
 };
