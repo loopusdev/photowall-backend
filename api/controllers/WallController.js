@@ -27,11 +27,36 @@ module.exports = {
   _config: {},
 
 
+  /**
+    * Get all photos of Wall by wallId
+    */
+  photos: function(req, res) {
+    var id = req.param('id');
+    var status = false;
 
-  photo: function(req, res) {
-
+    Photo.find({
+      where: {
+        wallId: id
+      },
+      sort: "id DESC"
+    }).done(function (err, photos) {
+      if (err) {
+        res.send({ "status": status, error: 'Error 400' }, 400);
+      } else {
+        if (!photos) {
+          res.json({ "status": status, error: 'Photos of wall ' + id + ' not found' }, 404);
+        }
+        else {
+          status = true;
+          res.send({ "status": status, data: photos });
+        }
+      }
+    });
   },
 
+  /**
+    * Get Wall by title identifier
+    */
   findOneByTitle: function(req, res) {
     var title = req.param('title');
     var status = false;

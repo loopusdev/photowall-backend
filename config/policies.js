@@ -29,6 +29,7 @@ module.exports.policies = {
     '*': ['isAuthenticated', 'isAdmin'],
     destroy: 'isWallOwner',
     find: true,
+    photos: true,
     create: true,
   },
 

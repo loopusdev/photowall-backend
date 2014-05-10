@@ -40,7 +40,13 @@ module.exports.routes = {
     cors: true,
     controller: 'WallController',
     action: 'findOneByTitle'
-  }
+  },
+
+  'get /wall/:id/photos': {
+    cors: true,
+    controller: 'WallController',
+    action: 'photos'
+  },
 
   /*
   // But what if you want your home page to display
