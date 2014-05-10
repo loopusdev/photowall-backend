@@ -14,6 +14,11 @@ module.exports = {
       type: 'string',
       required: true,
       unique: true,
+    },
+
+    userId: {
+      type: 'integer',
+      required: true,
     }
 
   }

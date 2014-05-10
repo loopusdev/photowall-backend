@@ -34,7 +34,7 @@ module.exports.adapters = {
     ssl: {
       rejectUnauthorized: false
     },
-    schema: true
+    schema: false
   },
 
   // MySQL is the world's most popular relational database.
