@@ -36,7 +36,7 @@ module.exports = {
     });
 
 
-    var imageData = res.param('imageData');
+    var imageData = req.param('imageData');
 
     var status = false;
 
