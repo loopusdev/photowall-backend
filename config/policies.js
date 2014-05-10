@@ -24,6 +24,7 @@ module.exports.policies = {
     destroy: true,
     find: true,
     create: true,
+    upload: true,
   },
 
   WallController: {
