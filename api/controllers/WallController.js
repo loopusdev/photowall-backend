@@ -26,9 +26,32 @@ module.exports = {
    */
   _config: {},
 
+
+
   photo: function(req, res) {
 
+  },
+
+  findOneByTitle: function(req, res) {
+    var title = req.param('title');
+    var status = false;
+    Wall.findOneByTitle(title).done(function (err, wall) {
+      if (err) {
+        res.send({ "status": status, error: 'Error 400' }, 400);
+      } else {
+        if (!wall) {
+          res.json({ "status": status, error: 'Wall not found' }, 404);
+        }
+        else {
+          status = true;
+          res.send({ "status": status, data: wall });
+        }
+      }
+    });
+
   }
+
+
 
 
 

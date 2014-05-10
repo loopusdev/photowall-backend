@@ -11,7 +11,7 @@ module.exports = {
   attributes: {
 
   	title: {
-      type: "string",
+      type: 'string',
       required: true,
       unique: true,
     }
