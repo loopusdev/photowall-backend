@@ -20,6 +20,7 @@ module.exports.policies = {
 
   PhotoController: {
     '*': ['isAuthenticated', 'isAdmin'],
+    destroy: 'isWallOwner',
     find: true,
     create: true,
   }
