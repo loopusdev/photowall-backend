@@ -33,8 +33,8 @@ module.exports.policies = {
     destroy: true,
     find: true,
     photos: true,
-    myWalls: 'isAuthenticated',
-    create: 'isAuthenticated',
+    myWalls: true,
+    create: true,
     findOneByTitle: true
   },
 
